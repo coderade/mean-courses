@@ -1,0 +1,23 @@
+{
+  "name": "mean-courses",
+  "version": "1.0.0",
+  "description": "App Courses created with MEAN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node:": "5.3.x",
+    "npm": "3.5.x"
+  },
+  "author": "Valdeci Gomes <valdeci@coderade.in>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "mongoose": "^4.3.4",
+    "morgan": "^1.6.1",
+    "stylus": "^0.53.0"
+  }
+}

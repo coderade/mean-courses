@@ -1,0 +1,27 @@
+{
+  "name": "mean-courses",
+  "description": "App Courses created with MEAN stack",
+  "main": "index.js",
+  "authors": [
+    "Valdeci Gomes <valdeci@coderade.in>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "http://coderade.in",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "toastr": "~2.1.2",
+    "angular": "~1.4.8",
+    "angular-resource": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "bootstrap": "~3.3.6"
+  }
+}
