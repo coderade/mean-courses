@@ -7,9 +7,5 @@ angular.module('app').config(function($routeProvider, $locationProvider ){
             templateUrl : '/partials/main',
             controller: 'mainCtrl'
         })
-
 });
 
-angular.module('app').controller('mainCtrl', function($scope){
-   $scope.varde = "Hello Angular";
-});

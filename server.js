@@ -41,15 +41,6 @@ db.once('open', function callback() {
     console.log('meancourses db opened');
 });
 
-var messageSchema = mongoose.Schema({message: String}),
-    Message = mongoose.model = mongoose.model('Message', messageSchema),
-    mongoMessage;
-
-Message.findOne().exec(function (err, messageDoc) {
-    mongoMessage = messageDoc.message;
-});
-
-
 
 
 app.get('/partials/:partialPath', function (req, res) {
@@ -57,9 +48,7 @@ app.get('/partials/:partialPath', function (req, res) {
 });
 
 app.get('*', function (req,res) {
-    res.render('index', {
-        mongoMessage : mongoMessage
-    })
+    res.render('index')
 });
 
 

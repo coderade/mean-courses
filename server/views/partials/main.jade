@@ -1,2 +1,10 @@
-h1 This is a partial
-h2 {{varde}}
+.container
+    .jumbotron
+        h1 Mean Courses
+        p Welcome to the best courses' site of the world
+
+    .row
+        .col-md-6
+            div(ng-include="'/partials/featured-courses'")
+        .col-md-6
+            div(ng-include="'/partials/new-courses'")
