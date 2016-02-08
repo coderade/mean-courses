@@ -1,4 +1,4 @@
-angular.module('app').controller('mainCtrl', function($scope){
+meanApp.controller('mainCtrl', function($scope){
     $scope.courses = [
         {name: "NodeJS course for Java developers", featured: true, published: new Date("12/12/2015")},
         {name: "Java 8 What's new?", featured: false, published: new Date("1/12/2016")},
@@ -8,5 +8,5 @@ angular.module('app').controller('mainCtrl', function($scope){
         {name: "Why .Net is not good", featured: true, published: new Date("1/2016")}
 
     ];
-    debugger;
+    //debugger;
 });

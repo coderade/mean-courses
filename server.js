@@ -1,60 +1,52 @@
 var express = require('express'),
-    stylus = require('stylus'),
-    logger = require('morgan'),
-    bodyParser = require('body-parser'),
-    mongoose = require('mongoose');
+    passport = require('passport'),
+    mongoose = require('mongoose'),
+    localStrategy = require('passport-local').Strategy;
+
+
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();
 
-app.set('views', __dirname + '/server/views');
-app.set('view engine', 'jade');
+var config = require('./server/config/config')[env];
 
-app.use(logger('dev'));
+require('./server/config/express')(app, config);
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-
-app.use(stylus.middleware(
-    {
-        src: __dirname + '/public',
-        compile: function (str, path){
-            return stylus(str).set('filename', path)
-        }
-    }
-));
-
-app.use(express.static(__dirname + '/public'));
-
-if(env === 'development'){
-    mongoose.connect('mongodb://localhost/meancourses');
-}
-else{
-    mongoose.connect('mongodb://admin:meancourses@ds043605.mongolab.com:43605/mean-courses');
-}
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error...'));
-
-db.once('open', function callback() {
-    console.log('meancourses db opened');
-});
+require('./server/config/mongoose')(config);
 
 
+var User = mongoose.model('User');
 
-app.get('/partials/:partialPath', function (req, res) {
-    res.render('partials/' + req.params.partialPath);
-});
+passport.use(new localStrategy(
+       function(username, password, done){
+            User.findOne({ username : username }).exec(function(err, user){
+                if(user) {
+                    return done(null, user);
+                }else {
+                    return done(null, false);
+                }
 
-app.get('*', function (req,res) {
-    res.render('index')
-});
+            });
+       }
+    ));
+
+    passport.serializeUser(function(user, done){
+        if (user)
+            done(null, user._id);
+    });
+
+    passport.deserializeUser(function(id, done){
+        User.findOne({ _id: id }).exec(function(err, user){
+            if(user)
+                return done(null, user);
+            return done(null, false);
+        });
+    }); 
+
+require('./server/config/routes')(app);
 
 
+app.listen(config.port);
 
-
-var port = process.env.PORT || 3030;
-app.listen(port);
-
-console.log('Listening on the port ' + port + '...')
+console.log('Listening on the port ' + config.port + '...')
