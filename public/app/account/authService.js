@@ -13,6 +13,15 @@ meanApp.factory('authService', function ($http, identifierService, $q) {
 
             });
             return dfd.promise;
+        }, 
+        logoutUser: function () {
+            var dfd = $q.defer();
+            $http.post('/logout', {logout: true})
+                .then(function () {
+                    identifierService.currentUser = undefined;
+                    dfd.resolve();
+                });
+            return dfd.promise;
         }
     }
 });

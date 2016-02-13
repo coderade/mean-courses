@@ -10,6 +10,14 @@ meanApp.factory('notifierSvc', function (toastrSvc) {
         error: function (msg) {
             toastrSvc.error(msg);
             console.log(msg)
+        },
+        warning: function (msg) {
+            toastrSvc.warning(msg);
+            console.log(msg)
+        },
+        info: function (msg) {
+            toastrSvc.info(msg);
+            console.log(msg)
         }
     }
 })

@@ -38,3 +38,14 @@
                             | New here ?
                             a(href='#')
                                 b Join Us
+    ul.nav.navbar-nav.navbar-right(ng-show='identity.isAuthenticated()')
+        li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+                b {{identity.currentUser.firstName + ' ' + identity.currentUser.lastName }}
+                span.caret
+            ul#logout-dp.dropdown-menu
+                li
+                    .row
+                        .col-md-12
+                            .form-group
+                                button.btn.btn-danger.btn-block(ng-click="signout()" type='submit') Sign out

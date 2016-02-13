@@ -1,4 +1,4 @@
-meanApp.controller('loginCtrl', function ($scope, $http, identifierService, notifierSvc, authService, $q) {
+meanApp.controller('loginCtrl', function ($scope, $http, identifierService, notifierSvc, authService, $location) {
     $scope.identity = identifierService;
     $scope.signin = function (username, password) {
         authService.authenticateUser(username, password)
@@ -10,4 +10,13 @@ meanApp.controller('loginCtrl', function ($scope, $http, identifierService, noti
                 }
             });
         };
+    $scope.signout = function () {
+        authService.logoutUser()
+            .then(function () {
+                $scope.username = '';
+                $scope.password = '';
+                notifierSvc.info('You have sucessfully signed out!');
+                $location.path('/');
+            })
+    }
 });
