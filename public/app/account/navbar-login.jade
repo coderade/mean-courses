@@ -44,6 +44,12 @@
                 b {{identity.currentUser.firstName + ' ' + identity.currentUser.lastName }}
                 span.caret
             ul#logout-dp.dropdown-menu
+                li(ng-show='identity.currentUser.isAdmin()')
+                    .row
+                        .col-md-12
+                            .form-group
+                                a.btn.btn-default.btn-block(href='/admin/users' role="button") Admin
+
                 li
                     .row
                         .col-md-12

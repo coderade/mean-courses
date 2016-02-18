@@ -1,0 +1,5 @@
+//- check for global variable containing the current user
+//- currentUser only available once when server serves index.html (page refresh)
+if !!currentUser
+    script.
+        window.currentUserObj = !{JSON.stringify(currentUser)} //- jade string interpolation
