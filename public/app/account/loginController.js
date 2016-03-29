@@ -10,6 +10,7 @@ meanApp.controller('loginCtrl', function ($scope, $http, identifierService, noti
                 }
             });
         };
+
     $scope.signout = function () {
         authService.logoutUser()
             .then(function () {

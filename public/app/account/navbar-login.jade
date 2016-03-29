@@ -10,19 +10,11 @@
                 li
                     .row
                         .col-md-12
-                            | Login via
-                            .social-buttons
-                                a.btn.btn-fb(href='#')
-                                    i.fa.fa-facebook
-                                    |  Facebook
-                                a.btn.btn-tw(href='#')
-                                    i.fa.fa-twitter
-                                    |  Twitter
-                            |                                 or
+                            | Please sign in
                             form#login-nav.form
                                 .form-group
-                                    label.sr-only(for='email') Email address
-                                    input#email.form-control(type='text', ng-model="username" placeholder='Email address', required='',)
+                                    label.sr-only(for='email') Username
+                                    input#email.form-control(type='text', ng-model="username" placeholder='Username', required='',)
                                 .form-group
                                     label.sr-only(for='password') Password
                                     input#password.form-control(type='password', ng-model="password" placeholder='Password')

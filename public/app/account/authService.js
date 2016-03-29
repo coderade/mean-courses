@@ -25,13 +25,11 @@ meanApp.factory('authService', function ($http, identifierService, $q, userResou
                 });
             return dfd.promise;
         },
-
-        autRouteAcessFor:  function (role) {
+        authRouteAcessFor:  function (role) {
             if(identifierService.isAuthorized(role)){
-                return true
+                return true;
             } else {
-                //debugger;
-                return $q.reject('not auhorized');
+                return $q.reject('NOT_AUTHORIZED');
 
             }
         }

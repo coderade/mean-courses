@@ -1,11 +1,9 @@
 var passport = require('passport'),
     mongoose = require('mongoose'),
-    localStrategy = require('passport-local').Strategy,
+    localStrategy = require('passport-local').Strategy
     User = mongoose.model('User');
+
 module.exports = function () {
-
-
-
     passport.use(new localStrategy(
         function(username, password, done){
             User.findOne({ username : username }).exec(function(err, user){
@@ -19,9 +17,10 @@ module.exports = function () {
         }
     ));
 
-    passport.serializeUser(function(user, done){
+    passport.serializeUser(function(user, done) {
         if (user)
-            done(null, user._id);
+           done(null, user._id);
+
     });
 
     passport.deserializeUser(function(id, done){

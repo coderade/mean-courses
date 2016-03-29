@@ -1,11 +1,10 @@
 'use strict';
 var meanApp = angular.module('app', ['ngResource', 'ngRoute'])
-    .config(function($routeProvider, $locationProvider ){
-
-        var checkRole = {
+    .config(function($routeProvider, $locationProvider){
+        var routeAuth = {
             admin: {
                 auth: function (authService) {
-                    authService.autRouteAcessFor('admin');
+                    return authService.authRouteAcessFor('admin')
                 }
             }
         };
@@ -13,27 +12,24 @@ var meanApp = angular.module('app', ['ngResource', 'ngRoute'])
         $locationProvider.html5Mode(true);
         $routeProvider
             .when('/', {
-                templateUrl : '/partials/main/main',
+                templateUrl: '/partials/main/main',
                 controller: 'mainCtrl'
             })
             .when('/admin/users', {
                 templateUrl : '/partials/admin/users-list',
                 controller: 'userListController',
-                resolve: checkRole.admin
+                resolve: routeAuth.admin
             })
     });
 
+
+
 meanApp.run(function ($rootScope, $location) {
-    debugger;
-    $rootScope.$on("$routeChangeError", function (evt, current, previous, rejection) {
-        debugger;
+    $rootScope.$on('$routeChangeError', function (evt, current, previous, rejection) {
         console.log(rejection);
-        if(rejection === 'not auhorized' ){
+        if(rejection === 'NOT_AUTHORIZED' ){
             $location.path('/');
         }
-        else{
-            console.log('wtf???')
-        }
-
     })
 });
+
