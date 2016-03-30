@@ -1,12 +1,12 @@
-meanApp.controller('loginCtrl', function ($scope, $http, identifierService, notifierSvc, authService, $location) {
+meanApp.controller('loginCtrl', function ($scope, $http, identifierService, notifierService, authService, $location) {
     $scope.identity = identifierService;
     $scope.signin = function (username, password) {
         authService.authenticateUser(username, password)
             .then(function (success) {
                 if(success){
-                    notifierSvc.notify('You have sucessfully signed in!')
+                    notifierService.notify('You have sucessfully signed in!')
                 } else{
-                    notifierSvc.error('Username/password combination incorrect!')
+                    notifierService.error('Username/password combination incorrect!')
                 }
             });
         };
@@ -16,7 +16,7 @@ meanApp.controller('loginCtrl', function ($scope, $http, identifierService, noti
             .then(function () {
                 $scope.username = '';
                 $scope.password = '';
-                notifierSvc.info('You have sucessfully signed out!');
+                notifierService.info('You have sucessfully signed out!');
                 $location.path('/');
             })
     }

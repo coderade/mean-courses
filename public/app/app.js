@@ -20,6 +20,10 @@ var meanApp = angular.module('app', ['ngResource', 'ngRoute'])
                 controller: 'userListController',
                 resolve: routeAuth.admin
             })
+            .when('/signup', {
+                templateUrl:  '/partials/account/signup',
+                controller: 'signupController'
+            })
     });
 
 

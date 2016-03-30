@@ -1,22 +1,22 @@
-meanApp.value('toastrSvc', toastr);
+meanApp.value('toastrService', toastr);
 
 
-meanApp.factory('notifierSvc', function (toastrSvc) {
+meanApp.factory('notifierService', function (toastrService) {
     return{
         notify: function (msg) {
-            toastrSvc.success(msg);
+            toastrService.success(msg);
             console.log(msg)
         },
         error: function (msg) {
-            toastrSvc.error(msg);
+            toastrService.error(msg);
             console.log(msg)
         },
         warning: function (msg) {
-            toastrSvc.warning(msg);
+            toastrService.warning(msg);
             console.log(msg)
         },
         info: function (msg) {
-            toastrSvc.info(msg);
+            toastrService.info(msg);
             console.log(msg)
         }
     }

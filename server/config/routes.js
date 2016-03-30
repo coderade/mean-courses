@@ -1,21 +1,14 @@
 'use strict';
 var auth = require('./auth'),
-    mongoose = require('mongoose'),
-    User = mongoose.model('User');
-
+    users = require('../controllers/users.js');
 module.exports = function(app) {
     app.get('/partials/*', function (req, res) {
         res.render('../../public/app/' + req.params[0]);
     });
 
-    app.get('/api/users', auth.requiresRole('admin'),
-        function (req, res) {
-            User.find({}).exec(function (err, collection) {
-                res.send(collection);
-            })
-        }
+    app.get('/api/users', auth.requiresRole('admin'), users.getUsers);
+    app.post('/api/users', users.createUser);
 
-    );
 
     app.post('/login', auth.authenticate);
     app.post('/logout', auth.logout);
