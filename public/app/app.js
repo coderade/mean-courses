@@ -6,6 +6,11 @@ var meanApp = angular.module('app', ['ngResource', 'ngRoute'])
                 auth: function (authService) {
                     return authService.authRouteAcessFor('admin')
                 }
+            },
+            user: {
+                auth: function (authService) {
+                    return authService.authAuthenticatedUserForRoute()
+                }
             }
         };
 
@@ -24,6 +29,11 @@ var meanApp = angular.module('app', ['ngResource', 'ngRoute'])
                 templateUrl:  '/partials/account/signup',
                 controller: 'signupController'
             })
+            .when('/profile', {
+                templateUrl:  '/partials/account/profile',
+                controller: 'profileController',
+                resolve: routeAuth.user
+            })
     });
 
 
@@ -36,4 +46,5 @@ meanApp.run(function ($rootScope, $location) {
         }
     })
 });
+
 

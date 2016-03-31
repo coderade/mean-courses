@@ -22,6 +22,9 @@
 #login-dp .form-group {
   margin-bottom: 10px;
 }
+#login-dp input:invalid {
+  border: 1px solid #f00;
+}
 #logout-dp {
   min-width: 250px;
   padding: 14px 14px 0px 14px;
@@ -64,4 +67,11 @@
 }
 .toast-top-right {
   top: 70px;
+}
+.msg-block {
+  margin-top: 5px;
+}
+.msg-error {
+  color: #f00;
+  font-size: 14px;
 }

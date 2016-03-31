@@ -3,15 +3,33 @@ meanApp.factory('authService', function ($http, identifierService, $q, userResou
         createUser: function (newUserData) {
             var newUser = new userResource(newUserData);
             var dfd = $q.defer();
-            
+
             newUser.$save().then(function () {
                 identifierService.currentUser = newUser;
                 dfd.resolve();
             }, function (response) {
-              dfd.reject(response.data.reason);
+                dfd.reject(response.data.reason);
             });
 
             return dfd.promise;
+        },
+
+        updateCurrentUser: function (newUserData) {
+            var dfd = $q.defer();
+            var userClone = angular.copy(identifierService.currentUser);
+
+            angular.extend(userClone, newUserData);
+            userClone.$update().then(function () {
+                    identifierService.currentUser = userClone;
+                    dfd.resolve();
+
+                }, function (response){
+                    dfd.reject(response.data.reason);
+                }
+            );
+            return dfd.promise;
+
+
         },
 
         authenticateUser: function (username, password) {
@@ -46,7 +64,14 @@ meanApp.factory('authService', function ($http, identifierService, $q, userResou
                 return true;
             } else {
                 return $q.reject('NOT_AUTHORIZED');
+            }
+        },
 
+        authAuthenticatedUserForRoute: function () {
+            if(identifierService.isAuthenticated()){
+                return true;
+            } else {
+                return $q.reject('NOT_AUTHORIZED');
             }
         }
 
