@@ -1,6 +1,7 @@
 'use strict';
 var auth = require('./auth'),
-    users = require('../controllers/users.js');
+    users = require('../controllers/users.js'),
+    courses = require('../controllers/courses.js');
 module.exports = function(app) {
     app.get('/partials/*', function (req, res) {
         res.render('../../public/app/' + req.params[0]);
@@ -10,8 +11,14 @@ module.exports = function(app) {
     app.post('/api/users', users.createUser);
     app.put('/api/users', users.updateUser);
 
+    app.get('/api/courses',  courses.getCourses);
+
     app.post('/login', auth.authenticate);
     app.post('/logout', auth.logout);
+
+    //app.all('/api/*', function (req,res) {
+    //    res.send(404);
+    //});
 
     app.get('*', function(req, res){
         res.render('index', {

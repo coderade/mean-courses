@@ -34,6 +34,10 @@ var meanApp = angular.module('app', ['ngResource', 'ngRoute'])
                 controller: 'profileController',
                 resolve: routeAuth.user
             })
+            .when('/courses', {
+                templateUrl: '/partials/courses/courses-list',
+                controller: 'coursesListController'
+            })
     });
 
 
