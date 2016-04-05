@@ -12,7 +12,7 @@ module.exports= {
     },
     production: {
         rootPath: rootPath,
-        db: 'mongodb://admin:meancourses@ds043605.mongolab.com:43605/mean-courses',
+        db: '',
         port: process.env.PORT || 80
     }
 };
