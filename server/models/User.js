@@ -36,8 +36,8 @@ function createDefaultUsers(){
             salt = encrypt.createSalt();
             hash = encrypt.hashPwd(salt, 'root');
             User.create({
-                firstName: 'Valdeci',
-                lastName: 'Gomes',
+                firstName: 'Admin',
+                lastName: 'User',
                 email: 'admin@meancourses.com',
                 salt: salt,
                 hashed_pwd: hash,
