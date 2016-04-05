@@ -1,13 +1,13 @@
 meanApp.controller('profileController', function ($scope, authService, identifierService, notifierService) {
 
-    $scope.email = identifierService.currentUser.username;
+    $scope.email = identifierService.currentUser.email;
     $scope.firstName = identifierService.currentUser.firstName;
     $scope.lastName = identifierService.currentUser.lastName;
 
 
     $scope.update = function () {
         var newUserData = {
-          username: $scope.email,
+          email: $scope.email,
           firstName: $scope.firstName,
           lastName: $scope.lastName
         };

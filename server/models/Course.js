@@ -32,7 +32,7 @@ function createDefaultCourses(){
             Course.create({title: 'Ruby on rails with AngularJS', featured: true, published: new Date("12/18/2015"), tags:['rails', 'coding', 'angularjs']});
             Course.create({title: 'Using AngularJS with .NET', featured: false, published: new Date("12/22/2015"), tags:['dotnet', 'angularjs', 'coding']});
             Course.create({title: 'Caching with Redis', featured: true, published: new Date("01/31/2016"), tags:['caching', 'redis']});
-            Course.create({title: 'Create your own map with OpenStreetMap stack', featured: true, published: new Date("01/14/2016"), tags:['maps', 'osm']});
+            Course.create({title: 'Create your own map with the OpenStreetMap stack', featured: true, published: new Date("01/14/2016"), tags:['maps', 'osm']});
             Course.create({title: 'Using the framework CodeIgniter', featured: true, published: new Date("02/07/2016"), tags:['php', 'coding', 'codeigniter']});
             Course.create({title: 'Create your application with NodeJS', featured: true, published: new Date("08/29/2015"), tags:['nodejs', 'coding']});
             Course.create({title: 'Learning Python from scratch', featured: false, published: new Date("12/14/2016"), tags:['python', 'coding']});

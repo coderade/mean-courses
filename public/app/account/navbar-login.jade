@@ -14,14 +14,14 @@
                             form#login-nav.form
                                 .form-group
                                     label.sr-only(for='email') Username
-                                    input#email.form-control(type='text', ng-model="username" placeholder='Username', required='',)
+                                    input#email.form-control(type='text', ng-model="email" placeholder='Email', required='',)
                                 .form-group
                                     label.sr-only(for='password') Password
                                     input#password.form-control(type='password', ng-model="password" placeholder='Password')
                                     .help-block.text-right
                                         a(href='') Forget the password ?
                                 .form-group
-                                    button.btn.btn-primary.btn-block(ng-click="signin(username, password)" type='submit') Sign in
+                                    button.btn.btn-primary.btn-block(ng-click="signin(email, password)" type='submit') Sign in
                                 .checkbox
                                     label
                                         input(type='checkbox')

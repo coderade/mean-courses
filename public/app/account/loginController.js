@@ -1,7 +1,7 @@
 meanApp.controller('loginCtrl', function ($scope, $http, identifierService, notifierService, authService, $location) {
     $scope.identity = identifierService;
-    $scope.signin = function (username, password) {
-        authService.authenticateUser(username, password)
+    $scope.signin = function (email, password) {
+        authService.authenticateUser(email, password)
             .then(function (success) {
                 if(success){
                     notifierService.notify('You have sucessfully signed in!')
@@ -14,7 +14,7 @@ meanApp.controller('loginCtrl', function ($scope, $http, identifierService, noti
     $scope.signout = function () {
         authService.logoutUser()
             .then(function () {
-                $scope.username = '';
+                $scope.email = '';
                 $scope.password = '';
                 notifierService.info('You have sucessfully signed out!');
                 $location.path('/');

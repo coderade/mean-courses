@@ -2,11 +2,15 @@ meanApp.controller('signupController', function ($scope, notifierService, userRe
 
     $scope.signup = function () {
         var newUserData = {
-            username: $scope.username,
-            password: $scope.password,
+            email: $scope.email,
+            password: $scope.pass,
             firstName: $scope.firstName,
             lastName: $scope.lastName
         };
+
+        if($scope.pass && $scope.pass.length > 0){
+            newUserData.password = $scope.pass;
+        }
 
         authService.createUser(newUserData).then(function () {
             notifierService.notify('User account created!');

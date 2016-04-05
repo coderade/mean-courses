@@ -38,6 +38,10 @@ var meanApp = angular.module('app', ['ngResource', 'ngRoute'])
                 templateUrl: '/partials/courses/courses-list',
                 controller: 'coursesListController'
             })
+            .when('/courses/:id', {
+                templateUrl: '/partials/courses/course-details',
+                controller: 'courseDetailsController'
+            })
     });
 
 

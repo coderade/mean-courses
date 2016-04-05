@@ -11,15 +11,16 @@ exports.getUsers =  function (req, res) {
 
 exports.createUser = function (req, res, next) {
     var userData = req.body;
-    userData.username =  userData.username.toLowerCase();
+    userData.email =  userData.email.toLowerCase();
     userData.salt = encrypt.createSalt();
     console.log(userData);
     userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
 
     User.create(userData, function (err, user) {
         if(err){
+            console.log(err.toString());
             if(err.toString().indexOf('E11000') > -1){
-                err = new Error('Duplicate username');
+                err = new Error('Duplicate email');
             }
             res.status(400);
             return res.send({reason:  err.toString()});
@@ -45,7 +46,7 @@ exports.updateUser = function (req, res) {
 
     req.user.firstName =  userUpdates.firstName;
     req.user.lastName =  userUpdates.lastName;
-    req.user.username =  userUpdates.username;
+    req.user.email =  userUpdates.email;
 
     if(userUpdates.password && userUpdates.password.length > 0){
         req.user.salt = encrypt.createSalt();

@@ -32,10 +32,10 @@ meanApp.factory('authService', function ($http, identifierService, $q, userResou
 
         },
 
-        authenticateUser: function (username, password) {
+        authenticateUser: function (email, password) {
             //debugger;
             var dfd = $q.defer();
-            $http.post('/login', { username: username, password: password }).then(function (response){
+            $http.post('/login', { email: email, password: password }).then(function (response){
                 if(response.data.success){
                     var user = new userResource();
                     angular.extend(user, response.data.user);

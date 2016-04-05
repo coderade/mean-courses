@@ -12,13 +12,14 @@ module.exports = function(app) {
     app.put('/api/users', users.updateUser);
 
     app.get('/api/courses',  courses.getCourses);
+    app.get('/api/courses/:id',  courses.getCourseById);
 
     app.post('/login', auth.authenticate);
     app.post('/logout', auth.logout);
 
-    //app.all('/api/*', function (req,res) {
-    //    res.send(404);
-    //});
+    app.all('/api/*', function (req,res) {
+        res.send(404);
+    });
 
     app.get('*', function(req, res){
         res.render('index', {

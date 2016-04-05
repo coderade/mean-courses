@@ -6,11 +6,7 @@
                 .form-group
                     label.col-md-2.control-label(for="email") Email
                     .col-md-10
-                        input.form-control(id="email", type="email", placeholder="Email", ng-model="username", required)
-                .form-group
-                    label.col-md-2.control-label(for="password") Password
-                    .col-md-10
-                        input.form-control(id="password", type="password", placeholder="Password", ng-model="password", required)
+                        input.form-control(id="email", type="email", placeholder="Email", ng-model="email", required)
                 .form-group
                     label.col-md-2.control-label(for="firstName") First Name
                     .col-md-10
@@ -19,9 +15,19 @@
                     label.col-md-2.control-label(for="lastName") Last Name
                     .col-md-10
                         input.form-control(id="lastName", type="text", placeholder="Last Name", ng-model="lastName", required)
+            .form-group
+                label.col-md-2.control-label(for="pass") Password
+                .col-md-10
+                    input.form-control(id="pass", name="pass", type="password", placeholder="Password", ng-model="pass")
+            .form-group
+                label.col-md-2.control-label(for="pass_confirm") Confirm Password
+                .col-md-10
+                    input.form-control(id="pass_confirm", name="pass_confirm", type="password", placeholder="Confirm the password", ng-model="pass_confirm", pass-validator='pass')
+            .msg-block(ng-show='signupForm.$error')
+                span.msg-error(ng-show='signupForm.pass_confirm.$error.pwmatch') Passwords don't match.
                 .form-group
                     .col-md-10.col-md-offset-2
                         .pull-right
-                            button.btn.btn-primary(ng-click="signup()", ng-disabled="signupForm.$invalid") Submit
+                            button.btn.btn-primary(ng-click="signup()", ng-disabled="signupForm.$invalid || !signupForm.pass_confirm.$error") Submit
                             | &nbsp;
                             a.btn.btn-default(href="/") Cancel

@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 var userSchema = mongoose.Schema({
     firstName: { type: String, required:'{PATH} is required!'},
     lastName: { type: String, required:'{PATH} is required!'},
-    username: {
+    email: {
         type: String,
         required:'{PATH} is required!',
         unique: true
@@ -38,35 +38,25 @@ function createDefaultUsers(){
             User.create({
                 firstName: 'Valdeci',
                 lastName: 'Gomes',
-                username: 'coderade',
+                email: 'admin@meancourses.com',
                 salt: salt,
                 hashed_pwd: hash,
                 roles: ['admin']
 
             });
             salt = encrypt.createSalt();
-            hash = encrypt.hashPwd(salt, 'ellon');
+            hash = encrypt.hashPwd(salt, 'default');
             User.create({
-                firstName: 'Ellon',
-                lastName: 'Musk',
-                username: 'ellon',
+                firstName: 'Default',
+                lastName: 'User',
+                email: 'default@meancourses.com',
                 salt: salt,
                 hashed_pwd: hash,
                 roles: []
-
             });
-            salt = encrypt.createSalt();
-            hash = encrypt.hashPwd(salt, 'bill');
-            User.create({
-                firstName: 'Bill',
-                lastName: 'Gates',
-                username: 'bill',
-                salt: salt,
-                hashed_pwd: hash,
-                roles: []
-            })
         }
     })
+
 }
 
 exports.createDefaultUsers = createDefaultUsers;
