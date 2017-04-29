@@ -7,7 +7,7 @@ This project is a web application developed for didactic purposes, being its mai
 
 ### Used technologies
 
-Although this porject is a simple application, many technologies were used to develop it.
+Although this project is a simple application, many technologies were used to develop it.
 
 And the main were:
 
