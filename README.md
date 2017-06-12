@@ -42,18 +42,21 @@ You can also login using a default account using the email **default@meancourses
 
 
 ## How to use
+You need to have the MongoDB installed. If you don't have it  you can install the MongoDB using the official 
+[documentation](https://docs.mongodb.org/manual/installation/).
 
-Download and install the Node.Js  and NPM from the [Node.js](https://nodejs.org/en/download/) site.
+Download and install the Node.Js using the [NVM](https://github.com/creationix/nvm).
 
-Install the MongoDB using this [tutorial](https://docs.mongodb.org/manual/installation/).
+Install the [yarn](https://yarnpkg.com/en/) following the official 
+[documentation](https://yarnpkg.com/lang/en/docs/install/#linux-tab).
 
 Clone the repository and install the node modules.
 
-`npm install`
+`yarn install`
 
 Install the Bower globally:
 
-`npm install -g bower`
+`yarn global add bower`
 
 Install the Bower components:
 
