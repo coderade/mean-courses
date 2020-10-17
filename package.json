@@ -20,7 +20,7 @@
     "express": "^4.16.0",
     "express-session": "^1.15.6",
     "jade": "^1.11.0",
-    "mocha": "^7.1.1",
+    "mocha": "^8.2.0",
     "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "passport": "^0.3.2",
@@ -33,7 +33,7 @@
     "karma-chai-plugins": "^0.7.0",
     "karma-chrome-launcher": "^0.2.3",
     "karma-mocha": "^0.2.2",
-    "mocha": "^7.1.1"
+    "mocha": "^8.2.0"
   },
   "snyk": true
 }
