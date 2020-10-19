@@ -1,7 +1,7 @@
 # Mean Courses
 ![Mean Courses](meancourses.png)
 
-[![Not Maintained](https://img.shields.io/badge/Maintenance%20Level-Not%20Maintained-yellow.svg)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
+![Not Maintained](https://img.shields.io/badge/Maintenance%20Level-Not%20Maintained-yellow.svg)
 
 **This project has been developed in 2015 for dictated purposes and is not maintained anymore. Some libraries are being updated using the [Dependabot](https://dependabot.com/) and [Snyk.io](https://snyk.io/) services, but no further tests are being done.**
 
