@@ -3,7 +3,7 @@
 
 [![Not Maintained](https://img.shields.io/badge/Maintenance%20Level-Not%20Maintained-yellow.svg)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
 
-This project has been developed in 2015 for dictated purposes and is not maintained anymore. Some libraries are being updated using the [Dependabot](https://dependabot.com/) and [Snyk.io](https://snyk.io/) services, but no further tests are being done.
+**This project has been developed in 2015 for dictated purposes and is not maintained anymore. Some libraries are being updated using the [Dependabot](https://dependabot.com/) and [Snyk.io](https://snyk.io/) services, but no further tests are being done.**
 
 Simple course application developed using the MEAN Stack. In this application, you can log in and create new users, manage these users using an *Admin* account and create and view the courses.
 
