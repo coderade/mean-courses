@@ -25,7 +25,7 @@ And the main were:
 * [Express](http://expressjs.com) - a Node.js web application server framework, designed for building single-page, multi-page, and hybrid web application
 * [Jade](http://jade-lang.com) - a terse language for writing HTML templates.
 * [Stylus](http://stylus-lang.com) - a revolutionary new language, providing an efficient, dynamic, and expressive way to generate CSS.
-* [Passport](http://passportjs.org) - a authentication middleware for Node.js. Used to create the log in interface in the server.
+* [Passport](http://passportjs.org) - a authentication middleware for Node.js. Used to create the login interface in the server.
 * [Mongoose](http://mongoosejs.com) - MongoDB object modeling tool designed to work in an asynchronous environment.
 
 #### Database
@@ -39,7 +39,7 @@ And the main were:
 
 You can test this application on [Heroku](https://www.heroku.com/) using this link: https://mean-courses.herokuapp.com
 
-To login with the admin account, use the email **admin@meancourses.com** and the password **root**.
+To log in with the admin account, use the email **admin@meancourses.com** and the password **root**.
 
 You can also login using a default account using the email **default@meancourses.com** and the password **default**.
 
