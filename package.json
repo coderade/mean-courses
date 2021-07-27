@@ -26,7 +26,7 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "stylus": "^0.54.3",
-    "snyk": "^1.465.0"
+    "snyk": "^1.667.0"
   },
   "devDependencies": {
     "karma": "^0.13.22",
