@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.21.5
+version: v1.25.0
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -14,3 +14,6 @@ patch:
         patched: '2021-07-27T14:06:02.042Z'
     - snyk > snyk-docker-plugin > snyk-nodejs-lockfile-parser > @yarnpkg/core > lodash:
         patched: '2021-07-27T14:06:02.042Z'
+  'npm:uglify-js:20151024':
+    - jade > transformers > uglify-js:
+        patched: '2022-10-05T21:37:24.520Z'
