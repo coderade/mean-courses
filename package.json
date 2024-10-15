@@ -16,9 +16,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "cookie-parser": "^1.4.1",
-    "express": "^4.16.0",
-    "express-session": "^1.15.6",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
     "jade": "^1.11.0",
     "mocha": "^9.2.0",
     "mongoose": "^5.12.2",
